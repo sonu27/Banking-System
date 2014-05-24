@@ -19,6 +19,12 @@ class AccountController extends Controller
         $bankingRepo  = $this->getDoctrine()->getRepository('ARBankingBundle:Banking');
         $transactions = $bankingRepo->findByAccount($accountId);
 
-        return $this->render('ARBankingBundle:Default:index.html.twig', compact('transactions'));
+        $accountRepo = $repository = $this->getDoctrine()->getRepository('ARBankingBundle:Account');
+        $account     = $accountRepo->find($accountId);
+
+        return $this->render(
+            'ARBankingBundle:Default:account-transactions.html.twig',
+            compact('transactions', 'account')
+        );
     }
 }
