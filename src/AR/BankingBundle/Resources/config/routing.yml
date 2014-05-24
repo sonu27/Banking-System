@@ -1,0 +1,13 @@
+ar_banking_homepage:
+    pattern:  /
+    defaults: { _controller: ARBankingBundle:Default:index }
+
+ar_banking_accounts:
+    pattern:  /account
+    defaults: { _controller: ARBankingBundle:Account:index }
+
+ar_banking_account:
+    pattern:  /account/{accountId}
+    defaults: { _controller: ARBankingBundle:Account:view }
+    requirements:
+        page:  \d+

@@ -1,0 +1,30 @@
+{% extends 'ARBankingBundle:Default:base.html.twig' %}
+
+{% block title %}Banking System{% endblock %}
+
+{% block body %}
+    <h1 class="page-header">Banking System</h1>
+    <table class="table table-striped table-hover">
+        <thead>
+        <th>Date</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Amount</th>
+        <th>Balance</th>
+        <th>Account</th>
+        </thead>
+        {% for transaction in transactions %}
+            <tr>
+                <td>{{ transaction.date|date("d/m/Y") }}</td>
+                <td>{{ transaction.paymentType }}</td>
+                <td>{{ transaction.description }}</td>
+                <td{% if transaction.amount < 0 %} class="danger"{% else %} class="success"{% endif %}>
+                    {{ transaction.amount|number_format(2, '.', ',') }}
+                </td>
+                <td>{{ transaction.balance|number_format(2, '.', ',') }}</td>
+                <td>{{ transaction.accountName }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}
+
