@@ -16,4 +16,17 @@ class BankingRepository extends EntityRepository
     {
         return $this->findBy(['account' => $accountId]);
     }
+
+    public function findByAccountWithinPeriod($accountId, $startDate, $endDate)
+    {
+        $query = $this->createQueryBuilder('b')
+            ->where('b.account = :accountId')
+            ->andWhere('b.date BETWEEN :startDate AND :endDate')
+            ->setParameter('accountId', $accountId)
+            ->setParameter('startDate', $startDate)
+            ->setParameter('endDate', $endDate)
+            ->getQuery();
+
+        return $query->getResult();
+    }
 }
