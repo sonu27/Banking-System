@@ -12,7 +12,7 @@ use Doctrine\ORM\EntityRepository;
  */
 class BankingRepository extends EntityRepository
 {
-    public function findAllFromAccount($accountId)
+    public function findByAccount($accountId)
     {
         return $this->findBy(['account' => $accountId]);
     }
