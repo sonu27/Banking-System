@@ -17,7 +17,7 @@ class AccountController extends Controller
     public function viewAction($accountId)
     {
         $bankingRepo  = $this->getDoctrine()->getRepository('ARBankingBundle:Banking');
-        $transactions = $bankingRepo->findBy(['account' => $accountId]);
+        $transactions = $bankingRepo->findAllFromAccount($accountId);
 
         return $this->render('ARBankingBundle:Default:index.html.twig', compact('transactions'));
     }

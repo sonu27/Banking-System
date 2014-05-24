@@ -14,6 +14,6 @@ class BankingRepository extends EntityRepository
 {
     public function findAllFromAccount($accountId)
     {
-
+        return $this->findBy(['account' => $accountId]);
     }
 }
