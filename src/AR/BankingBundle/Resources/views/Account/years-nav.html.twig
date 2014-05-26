@@ -1,0 +1,6 @@
+<ul class="nav nav-sidebar">
+    <li><a href="{{ path('ar_banking_account_all', {'accountId': account.id}) }}">All</a></li>
+    {% for year in years %}
+        <li><a href="{{ path('ar_banking_account_overview', {'accountId': account.id, 'year': year.year}) }}">{{ year.year }}</a></li>
+    {% endfor %}
+</ul>

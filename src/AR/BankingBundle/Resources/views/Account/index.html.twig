@@ -11,7 +11,7 @@
         </thead>
         {% for account in accounts %}
             <tr>
-                <td><a href="{{ path('ar_banking_accounts') }}/{{ account.id }}">{{ account.name }}</a></td>
+                <td><a href="{{ path('ar_banking_account', {'accountId': account.id}) }}">{{ account.name }}</a></td>
                 <td>{{ account.number }}</td>
             </tr>
         {% endfor %}

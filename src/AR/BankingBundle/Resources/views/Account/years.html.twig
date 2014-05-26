@@ -1,0 +1,14 @@
+{% extends 'ARBankingBundle:Default:base.html.twig' %}
+
+{% block title %}{{ account.name }} Years active - Banking System{% endblock %}
+
+{% block body %}
+    <h1 class="page-header">{{ account.name }} <small>transactions</small></h1>
+    <ol class="breadcrumb">
+        <li><a href="{{ path('ar_banking_homepage') }}">Home</a></li>
+        <li><a href="{{ path('ar_banking_accounts') }}">Accounts</a></li>
+        <li class="active">{{ account.name }}</li>
+    </ol>
+    {{ render(controller('ARBankingBundle:AccountView:yearsActive', {'accountId': account.id})) }}
+{% endblock %}
+

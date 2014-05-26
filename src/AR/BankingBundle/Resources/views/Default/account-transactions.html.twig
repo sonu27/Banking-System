@@ -3,7 +3,15 @@
 {% block title %}Transactions - Banking System{% endblock %}
 
 {% block body %}
-    <h1 class="page-header">Transactions for {{ account.name }}</h1>
+    <h1 class="page-header">{{ account.name }}
+        <small>{% if year is defined %}transactions for year {{ year }}{% else %}all transactions{% endif %}</small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="{{ path('ar_banking_homepage') }}">Home</a></li>
+        <li><a href="{{ path('ar_banking_accounts') }}">Accounts</a></li>
+        <li><a href="{{ path('ar_banking_account', {'accountId': account.id}) }}">{{ account.name }}</a></li>
+        <li class="active">{% if year is defined %}{{ year }}{% else %}All{% endif %}</li>
+    </ol>
     <table class="table table-striped table-hover">
         <thead>
         <th>Date</th>
@@ -26,3 +34,6 @@
     </table>
 {% endblock %}
 
+{% block sideNav %}
+    {{ render(controller('ARBankingBundle:AccountView:yearsActive', {'accountId': account.id})) }}
+{% endblock %}

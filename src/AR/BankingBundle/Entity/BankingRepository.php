@@ -29,4 +29,21 @@ class BankingRepository extends EntityRepository
 
         return $query->getResult();
     }
+
+    public function findByAccountForMonth($accountId, $year, $month)
+    {
+        $time            = mktime(0, 0, 0, $month, 1, $year);
+        $firstDayOfMonth = date('Y-m-d', $time);
+        $lastDayOfMonth  = date('Y-m-t', $time);
+
+        return $this->findByAccountWithinPeriod($accountId, $firstDayOfMonth, $lastDayOfMonth);
+    }
+
+    public function findByAccountForYear($accountId, $year)
+    {
+        $firstDayOfYear = $year . '-01-01';
+        $lastDayOfYear  = $year . '-12-31';
+
+        return $this->findByAccountWithinPeriod($accountId, $firstDayOfYear, $lastDayOfYear);
+    }
 }

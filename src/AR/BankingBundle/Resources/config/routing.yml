@@ -10,4 +10,17 @@ ar_banking_account:
     pattern:  /account/{accountId}
     defaults: { _controller: ARBankingBundle:Account:view }
     requirements:
-        page:  \d+
+        accountId:  \d+
+
+ar_banking_account_all:
+    pattern:  /account/{accountId}/all
+    defaults: { _controller: ARBankingBundle:Account:viewAll }
+    requirements:
+        accountId:  \d+
+
+ar_banking_account_overview:
+    pattern:  /account/{accountId}/{year}
+    defaults: { _controller: ARBankingBundle:Account:viewYear }
+    requirements:
+        accountId:  \d+
+        year:  \d+
