@@ -24,3 +24,7 @@ ar_banking_account_overview:
     requirements:
         accountId:  \d+
         year:  \d+
+
+ar_banking_search:
+    pattern:  /search
+    defaults: { _controller: ARBankingBundle:Search:index }

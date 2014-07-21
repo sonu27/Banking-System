@@ -46,4 +46,14 @@ class BankingRepository extends EntityRepository
 
         return $this->findByAccountWithinPeriod($accountId, $firstDayOfYear, $lastDayOfYear);
     }
+
+    public function search($description)
+    {
+        $query = $this->createQueryBuilder('b')
+            ->where('b.description LIKE :description')
+            ->setParameter('description', '%' . $description . '%')
+            ->getQuery();
+
+        return $query->getResult();
+    }
 }
