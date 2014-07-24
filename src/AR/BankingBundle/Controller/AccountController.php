@@ -8,7 +8,7 @@ class AccountController extends Controller
 {
     public function indexAction()
     {
-        $accountRepo = $repository = $this->getDoctrine()->getRepository('ARBankingBundle:Account');
+        $accountRepo = $this->getDoctrine()->getRepository('ARBankingBundle:Account');
         $accounts    = $accountRepo->findAll();
 
         return $this->render('ARBankingBundle:Account:index.html.twig', compact('accounts'));
@@ -16,7 +16,7 @@ class AccountController extends Controller
 
     public function viewAction($accountId)
     {
-        $accountRepo = $repository = $this->getDoctrine()->getRepository('ARBankingBundle:Account');
+        $accountRepo = $this->getDoctrine()->getRepository('ARBankingBundle:Account');
         $account     = $accountRepo->find($accountId);
 
         return $this->render(
@@ -30,7 +30,7 @@ class AccountController extends Controller
         $bankingRepo  = $this->getDoctrine()->getRepository('ARBankingBundle:Banking');
         $transactions = $bankingRepo->findByAccount($accountId);
 
-        $accountRepo = $repository = $this->getDoctrine()->getRepository('ARBankingBundle:Account');
+        $accountRepo = $this->getDoctrine()->getRepository('ARBankingBundle:Account');
         $account     = $accountRepo->find($accountId);
 
         return $this->render(
@@ -44,7 +44,7 @@ class AccountController extends Controller
         $bankingRepo  = $this->getDoctrine()->getRepository('ARBankingBundle:Banking');
         $transactions = $bankingRepo->findByAccountForYear($accountId, $year);
 
-        $accountRepo = $repository = $this->getDoctrine()->getRepository('ARBankingBundle:Account');
+        $accountRepo = $this->getDoctrine()->getRepository('ARBankingBundle:Account');
         $account     = $accountRepo->find($accountId);
 
         return $this->render(
