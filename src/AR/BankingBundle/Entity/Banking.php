@@ -80,12 +80,10 @@ class Banking
      */
     private $account;
 
-
-
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -95,7 +93,7 @@ class Banking
     /**
      * Set date
      *
-     * @param \DateTime $date
+     * @param  \DateTime $date
      * @return Banking
      */
     public function setDate($date)
@@ -108,7 +106,7 @@ class Banking
     /**
      * Get date
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
     public function getDate()
     {
@@ -118,7 +116,7 @@ class Banking
     /**
      * Set paymentType
      *
-     * @param string $paymentType
+     * @param  string  $paymentType
      * @return Banking
      */
     public function setPaymentType($paymentType)
@@ -131,7 +129,7 @@ class Banking
     /**
      * Get paymentType
      *
-     * @return string 
+     * @return string
      */
     public function getPaymentType()
     {
@@ -141,7 +139,7 @@ class Banking
     /**
      * Set description
      *
-     * @param string $description
+     * @param  string  $description
      * @return Banking
      */
     public function setDescription($description)
@@ -154,7 +152,7 @@ class Banking
     /**
      * Get description
      *
-     * @return string 
+     * @return string
      */
     public function getDescription()
     {
@@ -164,7 +162,7 @@ class Banking
     /**
      * Set amount
      *
-     * @param float $amount
+     * @param  float   $amount
      * @return Banking
      */
     public function setAmount($amount)
@@ -177,7 +175,7 @@ class Banking
     /**
      * Get amount
      *
-     * @return float 
+     * @return float
      */
     public function getAmount()
     {
@@ -187,7 +185,7 @@ class Banking
     /**
      * Set balance
      *
-     * @param float $balance
+     * @param  float   $balance
      * @return Banking
      */
     public function setBalance($balance)
@@ -200,7 +198,7 @@ class Banking
     /**
      * Get balance
      *
-     * @return float 
+     * @return float
      */
     public function getBalance()
     {
@@ -210,7 +208,7 @@ class Banking
     /**
      * Set accountName
      *
-     * @param string $accountName
+     * @param  string  $accountName
      * @return Banking
      */
     public function setAccountName($accountName)
@@ -223,7 +221,7 @@ class Banking
     /**
      * Get accountName
      *
-     * @return string 
+     * @return string
      */
     public function getAccountName()
     {
@@ -233,7 +231,7 @@ class Banking
     /**
      * Set accountNumber
      *
-     * @param string $accountNumber
+     * @param  string  $accountNumber
      * @return Banking
      */
     public function setAccountNumber($accountNumber)
@@ -246,7 +244,7 @@ class Banking
     /**
      * Get accountNumber
      *
-     * @return string 
+     * @return string
      */
     public function getAccountNumber()
     {
@@ -256,7 +254,7 @@ class Banking
     /**
      * Set account
      *
-     * @param \AR\BankingBundle\Entity\Account $account
+     * @param  \AR\BankingBundle\Entity\Account $account
      * @return Banking
      */
     public function setAccount(\AR\BankingBundle\Entity\Account $account = null)
@@ -269,7 +267,7 @@ class Banking
     /**
      * Get account
      *
-     * @return \AR\BankingBundle\Entity\Account 
+     * @return \AR\BankingBundle\Entity\Account
      */
     public function getAccount()
     {

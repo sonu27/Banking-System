@@ -41,8 +41,8 @@ class BankingRepository extends EntityRepository
 
     public function findByAccountForYear($accountId, $year)
     {
-        $firstDayOfYear = $year . '-01-01';
-        $lastDayOfYear  = $year . '-12-31';
+        $firstDayOfYear = $year.'-01-01';
+        $lastDayOfYear  = $year.'-12-31';
 
         return $this->findByAccountWithinPeriod($accountId, $firstDayOfYear, $lastDayOfYear);
     }
@@ -51,7 +51,7 @@ class BankingRepository extends EntityRepository
     {
         $query = $this->createQueryBuilder('b')
             ->where('b.description LIKE :description')
-            ->setParameter('description', '%' . $description . '%')
+            ->setParameter('description', '%'.$description.'%')
             ->getQuery();
 
         return $query->getResult();

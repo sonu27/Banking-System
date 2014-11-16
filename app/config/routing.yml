@@ -1,4 +1,3 @@
 ar_banking:
     resource: "@ARBankingBundle/Resources/config/routing.yml"
     prefix:   /
-

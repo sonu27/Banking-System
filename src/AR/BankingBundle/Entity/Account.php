@@ -35,12 +35,10 @@ class Account
      */
     private $number;
 
-
-
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -50,7 +48,7 @@ class Account
     /**
      * Set name
      *
-     * @param string $name
+     * @param  string  $name
      * @return Account
      */
     public function setName($name)
@@ -63,7 +61,7 @@ class Account
     /**
      * Get name
      *
-     * @return string 
+     * @return string
      */
     public function getName()
     {
@@ -73,7 +71,7 @@ class Account
     /**
      * Set number
      *
-     * @param string $number
+     * @param  string  $number
      * @return Account
      */
     public function setNumber($number)
@@ -86,7 +84,7 @@ class Account
     /**
      * Get number
      *
-     * @return string 
+     * @return string
      */
     public function getNumber()
     {
